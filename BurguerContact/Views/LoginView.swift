@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         VStack {
@@ -18,13 +19,13 @@ struct LoginView: View {
                 .frame(width: 200, height: 200)
                 .padding()
             
-            TextField("Usuario", text: $username)
+            TextField("Usuario", text: $viewModel.email)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
                 .padding(.horizontal)
             
-            SecureField("Contraseña", text: $password)
+            SecureField("Contraseña", text: $viewModel.password)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
@@ -32,6 +33,7 @@ struct LoginView: View {
             
             Button(action: {
                 // Acción para iniciar sesión
+                viewModel.login()
             }) {
                 Text("Iniciar sesión")
                     .foregroundColor(.white)
@@ -43,15 +45,25 @@ struct LoginView: View {
                     .padding(.horizontal)
             }
             
+            // Mensaje de error
+            if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
             Spacer()
             
-            Button(action: {
-                // Acción para registrarse
-            }) {
+            
+            // Acción para registrarse
+            NavigationLink(destination: SignUpView()){
                 Text("¿Aún no te has registrado?")
                     .foregroundColor(.black)
             }
+            .navigationBarBackButtonHidden(true)
             .padding()
+            
+            
         }
         .padding()
     }

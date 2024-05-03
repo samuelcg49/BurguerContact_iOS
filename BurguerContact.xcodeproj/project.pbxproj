@@ -15,6 +15,12 @@
 		7E9BDCA42BE4D2AD00938108 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7E9BDCA32BE4D2AD00938108 /* FirebaseAuth */; };
 		7E9BDCA62BE4D2AD00938108 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7E9BDCA52BE4D2AD00938108 /* FirebaseFirestore */; };
 		7E9BDCA82BE4D2AD00938108 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7E9BDCA72BE4D2AD00938108 /* FirebaseStorage */; };
+		7E9BDCAA2BE50BD500938108 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9BDCA92BE50BD500938108 /* Launch Screen.storyboard */; };
+		7E9BDCB02BE50D1D00938108 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDCAF2BE50D1D00938108 /* UserModel.swift */; };
+		7E9BDCB22BE50D9400938108 /* FirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDCB12BE50D9400938108 /* FirebaseDataSource.swift */; };
+		7E9BDCB42BE510F700938108 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDCB32BE510F700938108 /* LoginViewModel.swift */; };
+		7E9BDCB62BE5130E00938108 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDCB52BE5130E00938108 /* SignUpView.swift */; };
+		7E9BDCB82BE513A300938108 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9BDCB72BE513A300938108 /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		7E65BF5E2BE4C12900137891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E65BF612BE4C12900137891 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E9BDCA02BE4D20300938108 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7E9BDCA92BE50BD500938108 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7E9BDCAF2BE50D1D00938108 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7E9BDCB12BE50D9400938108 /* FirebaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataSource.swift; sourceTree = "<group>"; };
+		7E9BDCB32BE510F700938108 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7E9BDCB52BE5130E00938108 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		7E9BDCB72BE513A300938108 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				7E65BF5A2BE4C12800137891 /* BurguerContactApp.swift */,
-				7E65BF5C2BE4C12800137891 /* LoginView.swift */,
+				7E9BDCAE2BE50D0D00938108 /* Services */,
+				7E9BDCAC2BE50CEC00938108 /* Models */,
+				7E9BDCAD2BE50CF800938108 /* ViewModels */,
+				7E9BDCAB2BE50CE100938108 /* Views */,
+				7E9BDCA92BE50BD500938108 /* Launch Screen.storyboard */,
 				7E65BF5E2BE4C12900137891 /* Assets.xcassets */,
 				7E9BDCA02BE4D20300938108 /* GoogleService-Info.plist */,
 				7E65BF602BE4C12900137891 /* Preview Content */,
@@ -74,6 +90,40 @@
 				7E65BF612BE4C12900137891 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7E9BDCAB2BE50CE100938108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E65BF5C2BE4C12800137891 /* LoginView.swift */,
+				7E9BDCB52BE5130E00938108 /* SignUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E9BDCAC2BE50CEC00938108 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E9BDCAF2BE50D1D00938108 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7E9BDCAD2BE50CF800938108 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7E9BDCB32BE510F700938108 /* LoginViewModel.swift */,
+				7E9BDCB72BE513A300938108 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7E9BDCAE2BE50D0D00938108 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7E9BDCB12BE50D9400938108 /* FirebaseDataSource.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +194,7 @@
 			files = (
 				7E65BF622BE4C12900137891 /* Preview Assets.xcassets in Resources */,
 				7E65BF5F2BE4C12900137891 /* Assets.xcassets in Resources */,
+				7E9BDCAA2BE50BD500938108 /* Launch Screen.storyboard in Resources */,
 				7E9BDCA12BE4D20300938108 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +207,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E65BF5D2BE4C12800137891 /* LoginView.swift in Sources */,
+				7E9BDCB02BE50D1D00938108 /* UserModel.swift in Sources */,
 				7E65BF5B2BE4C12800137891 /* BurguerContactApp.swift in Sources */,
+				7E9BDCB42BE510F700938108 /* LoginViewModel.swift in Sources */,
+				7E9BDCB62BE5130E00938108 /* SignUpView.swift in Sources */,
+				7E9BDCB22BE50D9400938108 /* FirebaseDataSource.swift in Sources */,
+				7E9BDCB82BE513A300938108 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +352,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -325,6 +382,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
