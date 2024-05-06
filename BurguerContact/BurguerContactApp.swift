@@ -22,10 +22,14 @@ struct BurguerContactApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var authenticationViewModel = AuthenticationViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                LoginView()
+            if let _ = authenticationViewModel.user{
+                    HomeView(authenticationViewModel: authenticationViewModel)
+            }else{
+                    LoginView(viewModel: authenticationViewModel)
             }
         }
     }

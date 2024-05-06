@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
-    @StateObject var viewModel = LoginViewModel()
+    @StateObject var viewModel = AuthenticationViewModel()
     
     var body: some View {
         VStack {
@@ -19,31 +19,30 @@ struct LoginView: View {
                 .frame(width: 200, height: 200)
                 .padding()
             
-            TextField("Usuario", text: $viewModel.email)
+            TextField("Usuario", text: $email)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
                 .padding(.horizontal)
             
-            SecureField("Contraseña", text: $viewModel.password)
+            SecureField("Contraseña", text: $password)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
                 .padding(.horizontal)
             
-            Button(action: {
+            Button("Iniciar sesión") {
                 // Acción para iniciar sesión
-                viewModel.login()
-            }) {
-                Text("Iniciar sesión")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color(#colorLiteral(red: 0.9764705896, green: 0.721568644, blue: 0.3921568692, alpha: 1)))
-                    .cornerRadius(8)
-                    .padding(.horizontal)
+                viewModel.login(email: email, password: password)
             }
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color(#colorLiteral(red: 0.9764705896, green: 0.721568644, blue: 0.3921568692, alpha: 1)))
+            .cornerRadius(8)
+            .padding(.horizontal)
+            
             
             // Mensaje de error
             if !viewModel.errorMessage.isEmpty {

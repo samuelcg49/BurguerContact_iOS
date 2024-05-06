@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SignUpView: View {
-    @StateObject var viewModel = SignUpViewModel()
     @State  var email = ""
     @State  var password = ""
     @State  var username = ""
     @State  var birthDate = Date()
     @State  var phone = ""
+    
+    @StateObject var viewModel = AuthenticationViewModel()
     
     var body: some View {
         VStack {
@@ -55,31 +56,31 @@ struct SignUpView: View {
                 .padding(.horizontal)
             
             // Botón Registrarse
-            Button(action: {
-                //viewModel.signUp()
-            }) {
-                Text("Registrarse")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color(#colorLiteral(red: 0.9764705896, green: 0.721568644, blue: 0.3921568692, alpha: 1)))
-                    .cornerRadius(10)
-                    .padding(.horizontal)
+            Button("Registrarse") {
+                viewModel.signUp(email: email, password: password)
             }
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color(#colorLiteral(red: 0.9764705896, green: 0.721568644, blue: 0.3921568692, alpha: 1)))
+            .cornerRadius(10)
+            .padding(.horizontal)
+            
             
             // Mensaje de error
-            //if !viewModel.errorMessage.isEmpty {
-            //    Text(viewModel.errorMessage)
-            //       .foregroundColor(.red)
-            //       .padding()
-            //}
+            //            if !signUpViewModel.errorMessage.isEmpty {
+            //                Text(viewModel.errorMessage)
+            //                    .foregroundColor(.red)
+            //                    .padding()
+            //            }
             
             Spacer()
         }
         .padding()
     }
 }
+
 
 #Preview {
     SignUpView()
