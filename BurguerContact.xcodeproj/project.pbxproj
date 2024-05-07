@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E1FCF7E2BE94FA800CBDFDA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1FCF7D2BE94FA800CBDFDA /* HomeView.swift */; };
+		7E39A1E62BEA2B88002FA936 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39A1E52BEA2B88002FA936 /* SignUpViewModel.swift */; };
 		7E65BF5B2BE4C12800137891 /* BurguerContactApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65BF5A2BE4C12800137891 /* BurguerContactApp.swift */; };
 		7E65BF5D2BE4C12800137891 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E65BF5C2BE4C12800137891 /* LoginView.swift */; };
 		7E65BF5F2BE4C12900137891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E65BF5E2BE4C12900137891 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		7E1FCF7D2BE94FA800CBDFDA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7E39A1E52BEA2B88002FA936 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		7E65BF572BE4C12800137891 /* BurguerContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurguerContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65BF5A2BE4C12800137891 /* BurguerContactApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurguerContactApp.swift; sourceTree = "<group>"; };
 		7E65BF5C2BE4C12800137891 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				7E9BDCB32BE510F700938108 /* AuthenticationViewModel.swift */,
+				7E39A1E52BEA2B88002FA936 /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				7E65BF5D2BE4C12800137891 /* LoginView.swift in Sources */,
 				7E1FCF7E2BE94FA800CBDFDA /* HomeView.swift in Sources */,
+				7E39A1E62BEA2B88002FA936 /* SignUpViewModel.swift in Sources */,
 				7E9BDCB02BE50D1D00938108 /* UserModel.swift in Sources */,
 				7E65BF5B2BE4C12800137891 /* BurguerContactApp.swift in Sources */,
 				7E9BDCB42BE510F700938108 /* AuthenticationViewModel.swift in Sources */,

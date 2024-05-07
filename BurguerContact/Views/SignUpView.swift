@@ -37,12 +37,6 @@ struct SignUpView: View {
                 .cornerRadius(10)
                 .padding(.horizontal)
             
-            SecureField("Repite la contraseña", text: $username)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(10)
-                .padding(.horizontal)
-            
             DatePicker("Fecha de Nacimiento", selection: $birthDate, displayedComponents: .date)
                 .padding()
                 .background(Color.gray.opacity(0.2))

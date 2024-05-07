@@ -8,14 +8,12 @@
 import Foundation
 
 class AuthenticationViewModel: ObservableObject {
-    @Published var email: String = ""
-    @Published var password: String = ""
+    
     @Published var isLoggedIn: Bool = false
     @Published var errorMessage: String = ""
-    @Published var confirmPassword: String = ""
     @Published var signUpError: Error?
     @Published var signUpSuccess: Bool = false
-    @Published var user: UserLogged?
+    @Published var user: User?
     
     init(){
         getCurrentUser()
@@ -33,9 +31,10 @@ class AuthenticationViewModel: ObservableObject {
         
         FirebaseDataSource.shared.login(email: email, password: password) { result in
             switch result {
-            case .success:
+            case .success(let user):
                 DispatchQueue.main.async {
                     self.isLoggedIn = true
+                    self.user = user
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -52,12 +51,14 @@ class AuthenticationViewModel: ObservableObject {
         }
         
         FirebaseDataSource.shared.signUp(email: email, password: password) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    self?.signUpSuccess = true
-                case .failure(let error):
-                    self?.signUpError = error
+            switch result {
+            case .success(let user):
+                DispatchQueue.main.async {
+                    self?.user = user
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self?.errorMessage = error.localizedDescription
                 }
             }
         }
